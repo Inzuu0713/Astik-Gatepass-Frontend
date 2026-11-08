@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import StudentLayout from "./components/student/StudentLayout";
 import Dashboard from "./pages/student/Dashboard";
+import VehicleRegistration from "./pages/student/VehicleRegistration";
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/status" element={<Home />} />
           <Route element={<StudentLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/vehicle-registration" element={<VehicleRegistration />} />
           </Route>
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
           <Route path="/admin/login" element={<AdminLogin />} />
