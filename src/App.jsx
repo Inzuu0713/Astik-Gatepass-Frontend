@@ -3,6 +3,8 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import AdminLogin from "./pages/admin/login/AdminLogin";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
+import AdminApplicants from "./pages/admin/applicants/AdminApplicants";
+import AdminApplicantDetails from "./pages/admin/applicants/AdminApplicantDetails";
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/applicants" element={<AdminApplicants />} />
+            <Route path="/admin/applicants/:id" element={<AdminApplicantDetails />} />
           </Route>
           <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
