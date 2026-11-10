@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import Home from "./pages/Home";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import AdminLogin from "./pages/admin/login/AdminLogin";
@@ -13,6 +16,9 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/status" element={<Home />} />
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route element={<ProtectedRoute />}>
@@ -22,7 +28,7 @@ export default function App() {
             <Route path="/admin/records" element={<AdminRecords />} />
             <Route path="/admin/records/:id" element={<AdminRecordDetails />} />
           </Route>
-          <Route path="*" element={<Navigate to="/admin/login" replace />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
