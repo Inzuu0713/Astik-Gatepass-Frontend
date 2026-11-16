@@ -25,9 +25,7 @@ export default function AdminLayout({ pageClass = "", children }) {
           <NavLink to="/admin/dashboard" className="nav-btn">Dashboard</NavLink>
           <NavLink to="/admin/applicants" className="nav-btn">Applicants</NavLink>
           <NavLink to="/admin/records" className="nav-btn">Records</NavLink>
-          <a href="#" className="nav-btn" onClick={(e) => e.preventDefault()}>
-            Campus Parking
-          </a>
+          <NavLink to="/admin/parking" className="nav-btn">Campus Parking</NavLink>
         </nav>
 
         <a href="#" className="signout" onClick={handleSignout}>Signout</a>

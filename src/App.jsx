@@ -15,6 +15,7 @@ import AdminApplicants from "./pages/admin/applicants/AdminApplicants";
 import AdminApplicantDetails from "./pages/admin/applicants/AdminApplicantDetails";
 import AdminRecords from "./pages/admin/records/AdminRecords";
 import AdminRecordDetails from "./pages/admin/records/AdminRecordDetails";
+import AdminCampusParking from "./pages/admin/campusparking/AdminCampusParking";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/admin/applicants/:id" element={<AdminApplicantDetails />} />
             <Route path="/admin/records" element={<AdminRecords />} />
             <Route path="/admin/records/:id" element={<AdminRecordDetails />} />
+            <Route path="/admin/parking" element={<AdminCampusParking />} />
           </Route>
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
